@@ -1,17 +1,17 @@
 ﻿using System;
+using System.IO.Enumeration;
+using System.Linq.Expressions;
 using SwiftSharp;
-using SwiftSharp.Collections;
+using SwiftSharp.Utilities;
 
 namespace SwiftNotes
 {
-    public static class Program
+    public static class Porgram
     {
         public static void Main()
         {
-            var numbers = new Array<int>([1, 2, 3]);
-            numbers.Append(4);
-
-            Console.WriteLine(numbers);
         }
+
+
     }
 }

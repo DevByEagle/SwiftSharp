@@ -2,6 +2,11 @@
   <PropertyGroup>
     <TargetFrameworks>net8.0;netstandard2.1</TargetFrameworks>
     <RootNamespace>SwiftSharp</RootNamespace>
+    <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- <InternalsVisibleTo Include="SwiftNotes" /> -->
+  </ItemGroup>
 </Project>
