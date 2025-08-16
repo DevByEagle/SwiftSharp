@@ -1,11 +1,17 @@
 ﻿using System;
 using SwiftSharp;
-using SwiftSharp.Memory;
+using SwiftSharp.Collections;
 
-public class Program
+namespace SwiftNotes
 {
-    public static void Main(string[] args)
+    public static class Program
     {
-        SwiftSharp.Memory.UnsafePointer<int> unsafePointer = new UnsafePointer<int>();
+        public static void Main()
+        {
+            var numbers = new Array<int>([1, 2, 3]);
+            numbers.Append(4);
+
+            Console.WriteLine(numbers);
+        }
     }
 }
