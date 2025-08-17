@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;net48</TargetFrameworks>
     <RootNamespace>SwiftSharp</RootNamespace>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- <InternalsVisibleTo Include="SwiftNotes" /> -->
+    <InternalsVisibleTo Include="SwiftSharp.UI" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.IO.Enumeration;
-using System.Linq.Expressions;
 using SwiftSharp;
-using SwiftSharp.Utilities;
+using SwiftSharp.Foundation;
 
 namespace SwiftNotes
 {
@@ -11,7 +9,5 @@ namespace SwiftNotes
         public static void Main()
         {
         }
-
-
     }
 }

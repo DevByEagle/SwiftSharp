@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Add net8.0-android & net8.0-ios & net8.0-maccatalyst back -->
+    <TargetFrameworks>netstandard2.1;net48</TargetFrameworks>
+    <RootNamespace>SwiftSharp.UI</RootNamespace>
+
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <!-- Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\SwiftSharp\SwiftSharp.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{70
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftNotes", "examples\SwiftNotes\SwiftNotes.csproj", "{1CC5C613-EBA9-4450-941B-E46A1D31FDED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftSharp.UI", "src\SwiftSharp.UI\SwiftSharp.UI.csproj", "{EDBEC606-992D-405B-AEB2-B6F1B498A793}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +30,14 @@ Global
 		{1CC5C613-EBA9-4450-941B-E46A1D31FDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CC5C613-EBA9-4450-941B-E46A1D31FDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CC5C613-EBA9-4450-941B-E46A1D31FDED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDBEC606-992D-405B-AEB2-B6F1B498A793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDBEC606-992D-405B-AEB2-B6F1B498A793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDBEC606-992D-405B-AEB2-B6F1B498A793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDBEC606-992D-405B-AEB2-B6F1B498A793}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7745C807-B34A-4003-BB61-54B6FEA3313E} = {AC9242C9-0BD5-40C4-894B-C38299A5624B}
 		{1CC5C613-EBA9-4450-941B-E46A1D31FDED} = {7097F380-772B-479A-BCE9-1E8FD222E4C7}
+		{EDBEC606-992D-405B-AEB2-B6F1B498A793} = {AC9242C9-0BD5-40C4-894B-C38299A5624B}
 	EndGlobalSection
 EndGlobal
