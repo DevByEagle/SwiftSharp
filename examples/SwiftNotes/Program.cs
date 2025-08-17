@@ -1,13 +1,14 @@
 ﻿using System;
-using SwiftSharp;
 using SwiftSharp.Foundation;
+using SwiftSharp.UI;
 
 namespace SwiftNotes
 {
-    public static class Porgram
+    internal class Program
     {
         public static void Main()
         {
+            Console.WriteLine("Hello, World");
         }
     }
 }
