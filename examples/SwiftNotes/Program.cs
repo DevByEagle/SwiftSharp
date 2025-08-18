@@ -1,6 +1,5 @@
 ﻿using System;
-using SwiftSharp.Foundation;
-using SwiftSharp.UI;
+using SwiftSharp;
 
 namespace SwiftNotes
 {
@@ -8,7 +7,7 @@ namespace SwiftNotes
     {
         public static void Main()
         {
-            Console.WriteLine("Hello, World");
+            Result<int, DllNotFoundException> result = new();
         }
     }
 }
