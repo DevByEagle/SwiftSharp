@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using SwiftSharp;
+using SwiftSharp.Foundation;
 
 namespace SwiftNotes
 {
@@ -7,7 +9,9 @@ namespace SwiftNotes
     {
         public static void Main()
         {
-            Result<int, DllNotFoundException> result = new();
+            var defaults = UserDefaults.Standard;
+            defaults.Set("DevByEagle", "username");
+            Console.WriteLine(defaults.GetString("username")!);
         }
     }
 }
