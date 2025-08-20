@@ -1,4 +1,36 @@
-[Oo]bj/
-[Bb]in/
+# Build directories and output
+bin/
+obj/
+out/
+Debug/
+Release/
+x64/
+x86/
+build/
+UserDefaults.xml
 
-*.xml
+# Compiled object files, libraries, and executables
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.log
+*.cache
+*.class
+
+# IDE/editor config files
+## Visual Studio
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# Backup and temporary files
+*~
