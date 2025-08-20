@@ -33,7 +33,7 @@ Here’s an example that demonstrates core features:
 
 ```cs
 using System;
-using SwiftSharp;          // Core SwiftSharp functionality
+using SwiftSharp;            // Core SwiftSharp functionality
 using SwiftSharp.Foundation; // Foundation classes
 
 public static class Program
@@ -72,5 +72,4 @@ SwiftSharp is open-source and welcomes contributions!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt)
- file for details.
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
