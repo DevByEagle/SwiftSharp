@@ -4,11 +4,15 @@ using SwiftSharp.Foundation;
 
 namespace BlockWorld
 {
+    public class Block
+    {
+
+    }
+
     internal class Program
     {
         public static void Main()
         {
-            Console.WriteLine("Hello, World");
         }
     }
 }

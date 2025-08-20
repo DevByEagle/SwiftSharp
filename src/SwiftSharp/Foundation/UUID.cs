@@ -30,7 +30,7 @@ namespace SwiftSharp.Foundation
             if (bytes.Length != 16)
                 throw new ArgumentException("UUID must be 16 bytes long.");
             this.bytes = new byte[16];
-            Array.Copy(bytes, this.bytes, 16);
+            System.Array.Copy(bytes, this.bytes, 16);
         }
 
         #endregion
