@@ -1,11 +1,16 @@
 using System;
 
+
 namespace SwiftSharp.UI.Rendering
 {
     internal class GraphicsContext
     {
-        public static GraphicsContext Current => new();
+        
+        public static GraphicsContext? Current { get; private set; } = null!;
 
-        private GraphicsContext() { }
+        internal GraphicsContext()
+        {
+            Current = this;
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace BlockWorld
     {
         protected override View CreateView()
         {
-            return new Text("Main View");
+            var text = new Text("Hello, World!");
+            return text;
         }
 
         public override void ViewDidLoad()
@@ -24,6 +25,7 @@ namespace BlockWorld
 
     internal class Program
     {
+        [STAThread]
         public static void Main()
         {
             var mainVC = new MainViewController();

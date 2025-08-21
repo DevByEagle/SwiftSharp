@@ -30,7 +30,10 @@ namespace SwiftSharp.UI
 
         public void LoadView()
         {
+            if (IsViewLoaded) return;
+
             View = CreateView();
+            ViewDidLoad();
             RenderView();
         }
 
@@ -88,15 +91,20 @@ namespace SwiftSharp.UI
                 throw new InvalidOperationException("View must be loaded before presenting.");
 
             AddChild(vc);
+
+            RenderView();
         }
 
         private void RenderView()
         {
+            if (View == null) return;
+
+            // Render root view
+            View.Render(Rendering.GraphicsContext.Current!);
+
+            // Render children recursively
             foreach (var child in Children)
-            {
-                // TODO: Render each subview on screen
-                child.Render(Rendering.GraphicsContext.Current);
-            }
+                child.Render(Rendering.GraphicsContext.Current!);
         }
 
         private void RunOnMainThread(Action action)
