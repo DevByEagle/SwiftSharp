@@ -7,21 +7,21 @@ namespace SwiftSharp.UI
     public readonly struct Font : IEquatable<Font>
     {
         [StructLayout(LayoutKind.Sequential)]
-        public readonly struct Weight
+        public struct Weight
         {
-            internal readonly int Value;
+            internal int Value;
 
             private Weight(int value) => Value = value;
 
-            public static readonly Weight UltraLight = new(100);
-            public static readonly Weight Thin = new(200);
-            public static readonly Weight Light = new(300);
-            public static readonly Weight Regular = new(400);
-            public static readonly Weight Medium = new(500);
-            public static readonly Weight Semibold = new(600);
-            public static readonly Weight Bold = new(700);
-            public static readonly Weight Heavy = new(800);
-            public static readonly Weight Black = new(900);
+            public static Weight UltraLight => new(100);
+            public static Weight Thin => new(200);
+            public static Weight Light => new(300);
+            public static Weight Regular => new(400);
+            public static Weight Medium => new(500);
+            public static Weight Semibold => new(600);
+            public static Weight Bold => new(700);
+            public static Weight Heavy => new(800);
+            public static Weight Black => new(900);
         }
 
         public enum TextStyle
