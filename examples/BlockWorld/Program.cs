@@ -1,38 +1,25 @@
 ﻿using System;
 using SwiftSharp;
+using SwiftSharp.GameKit;
 using SwiftSharp.Foundation;
-using SwiftSharp.UI;
 
 namespace BlockWorld
 {
-    class BlockView : View
-    {
-    }
-
-    class MainViewController : UIViewController
-    {
-        protected override View CreateView()
-        {
-            var text = new Text("Hello, World!");
-            return text;
-        }
-
-        public override void ViewDidLoad()
-        {
-            Show(this, sender: this);
-        }
-    }
-
     internal class Program
     {
-        [STAThread]
         public static void Main()
         {
-            var mainVC = new MainViewController();
+            AuthenticatePlayer();
+        }
 
-            mainVC.LoadViewIfNeeded();
+        private static void AuthenticatePlayer()
+        {
+        
+        }
 
-            Console.WriteLine($"MainViewController IsViewLoaded: {mainVC.IsViewLoaded}");
-        } 
+        private static void LoadLeaderboard()
+        {
+
+        }
     }
 }
