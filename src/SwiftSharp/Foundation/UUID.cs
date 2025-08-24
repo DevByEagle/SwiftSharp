@@ -1,13 +1,12 @@
 using System;
-using System.Diagnostics.CodeAnalysis;
+using System.Data.Common;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace SwiftSharp.Foundation
 {
-    public struct UUID
+    public readonly struct UUID : IEquatable<UUID>
     {
-        private readonly byte[] bytes; // 16 bytes
+        private readonly byte[] bytes;
 
         #region Constructors
 
@@ -25,39 +24,41 @@ namespace SwiftSharp.Foundation
             bytes[8] = (byte)((bytes[8] & 0x3F) | 0x80);
         }
 
-        public UUID(byte[] bytes)
+        #endregion
+
+        #region Properties
+
+        public static bool operator ==(UUID lhs, UUID rhs)
         {
-            if (bytes.Length != 16)
-                throw new ArgumentException("UUID must be 16 bytes long.");
-            this.bytes = new byte[16];
-            System.Array.Copy(bytes, this.bytes, 16);
+            if (ReferenceEquals(lhs, rhs))
+                return true;
+            else if (lhs.bytes.Length != rhs.bytes.Length)
+                return false;
+
+            for (int i = 0; i < lhs.bytes.Length; i++)
+                if (lhs.bytes[i] != rhs.bytes[i])
+                    return false;
+
+            return true;
         }
+
+        public static bool operator !=(UUID lhs, UUID rhs) => !(lhs == rhs);
 
         #endregion
 
         #region Utility Methods
 
-        public override string ToString()
-        {
-            return BitConverter.ToString(bytes, 0, 4).Replace("-", "") + "-" +
-                   BitConverter.ToString(bytes, 4, 2).Replace("-", "") + "-" +
-                   BitConverter.ToString(bytes, 6, 2).Replace("-", "") + "-" +
-                   BitConverter.ToString(bytes, 8, 2).Replace("-", "") + "-" +
-                   BitConverter.ToString(bytes, 10, 6).Replace("-", "");
-        }
-
-        public override bool Equals(object? obj)
-        {
-            return obj is UUID other && Equals(other);
-        }
+        public override bool Equals(object? obj) => obj is UUID other && Equals(other);
 
         public bool Equals(UUID other)
         {
-            for (int i = 0; i < 16; i++)
-            {
+            if (bytes.Length != other.bytes.Length)
+                return false;
+
+            for (int i = 0; i < bytes.Length; i++)
                 if (bytes[i] != other.bytes[i])
                     return false;
-            }
+
             return true;
         }
 
@@ -69,8 +70,14 @@ namespace SwiftSharp.Foundation
             return hash;
         }
 
-        public static bool operator ==(UUID a, UUID b) => a.Equals(b);
-        public static bool operator !=(UUID a, UUID b) => !a.Equals(b);
+        public override string ToString()
+        {
+            return BitConverter.ToString(bytes, 0, 4).Replace("-", "") + "-" +
+                   BitConverter.ToString(bytes, 4, 2).Replace("-", "") + "-" +
+                   BitConverter.ToString(bytes, 6, 2).Replace("-", "") + "-" +
+                   BitConverter.ToString(bytes, 8, 2).Replace("-", "") + "-" +
+                   BitConverter.ToString(bytes, 10, 6).Replace("-", "");
+        }
 
         #endregion
     }

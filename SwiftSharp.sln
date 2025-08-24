@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{22
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockWorld", "examples\BlockWorld\BlockWorld.csproj", "{C5F5587C-3DE2-4F96-A161-3537A986ABE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftSharp.GameKit", "src\SwiftSharp.GameKit\SwiftSharp.GameKit.csproj", "{905600F5-06F4-41BE-ACA7-3ED3C7D6E5C8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,14 +28,9 @@ Global
 		{C5F5587C-3DE2-4F96-A161-3537A986ABE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5F5587C-3DE2-4F96-A161-3537A986ABE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5F5587C-3DE2-4F96-A161-3537A986ABE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{905600F5-06F4-41BE-ACA7-3ED3C7D6E5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{905600F5-06F4-41BE-ACA7-3ED3C7D6E5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{905600F5-06F4-41BE-ACA7-3ED3C7D6E5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{905600F5-06F4-41BE-ACA7-3ED3C7D6E5C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{44B2D7B4-453B-4348-9D5F-5DC8529A4D3F} = {542DBC21-325E-4B3C-84FB-2CF99FD68AAD}
 		{C5F5587C-3DE2-4F96-A161-3537A986ABE9} = {22EB9972-6F9B-43DA-963D-64EC1EA44AB9}
-		{905600F5-06F4-41BE-ACA7-3ED3C7D6E5C8} = {542DBC21-325E-4B3C-84FB-2CF99FD68AAD}
 	EndGlobalSection
 EndGlobal

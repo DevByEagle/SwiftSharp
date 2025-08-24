@@ -1,6 +1,5 @@
 ﻿using System;
 using SwiftSharp;
-using SwiftSharp.GameKit;
 using SwiftSharp.Foundation;
 
 namespace BlockWorld
@@ -9,17 +8,13 @@ namespace BlockWorld
     {
         public static void Main()
         {
-            AuthenticatePlayer();
-        }
+            var id = new UUID();
+            var id2 = new UUID();
 
-        private static void AuthenticatePlayer()
-        {
-        
-        }
-
-        private static void LoadLeaderboard()
-        {
-
+            if (id == id2)
+            {
+                Console.WriteLine(id);
+            }
         }
     }
 }

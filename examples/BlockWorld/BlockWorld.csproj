@@ -9,7 +9,6 @@
   
   <ItemGroup>
     <ProjectReference Include="..\..\src\SwiftSharp\SwiftSharp.csproj" />
-    <ProjectReference Include="..\..\src\SwiftSharp.GameKit\SwiftSharp.GameKit.csproj" />
   </ItemGroup>
 
 </Project>
