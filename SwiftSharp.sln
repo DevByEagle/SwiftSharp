@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{542DBC21-325E-4B3C-84FB-2CF99FD68AAD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4BF7057B-C623-4CA7-9137-A163EDBAFD3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftSharp", "src\SwiftSharp\SwiftSharp.csproj", "{44B2D7B4-453B-4348-9D5F-5DC8529A4D3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftSharp", "src\SwiftSharp\SwiftSharp.csproj", "{E9E4F7FB-11FD-4A57-B688-AA20370A89C2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{22EB9972-6F9B-43DA-963D-64EC1EA44AB9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{B8E3FBB0-71CA-4A20-9295-1ECE7F85B955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockWorld", "examples\BlockWorld\BlockWorld.csproj", "{C5F5587C-3DE2-4F96-A161-3537A986ABE9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "examples\Sandbox\Sandbox.csproj", "{8E03C417-F176-40B1-96B8-6C4750AC58E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,17 +20,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44B2D7B4-453B-4348-9D5F-5DC8529A4D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44B2D7B4-453B-4348-9D5F-5DC8529A4D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44B2D7B4-453B-4348-9D5F-5DC8529A4D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44B2D7B4-453B-4348-9D5F-5DC8529A4D3F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5F5587C-3DE2-4F96-A161-3537A986ABE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5F5587C-3DE2-4F96-A161-3537A986ABE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5F5587C-3DE2-4F96-A161-3537A986ABE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5F5587C-3DE2-4F96-A161-3537A986ABE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9E4F7FB-11FD-4A57-B688-AA20370A89C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E4F7FB-11FD-4A57-B688-AA20370A89C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E4F7FB-11FD-4A57-B688-AA20370A89C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E4F7FB-11FD-4A57-B688-AA20370A89C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E03C417-F176-40B1-96B8-6C4750AC58E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E03C417-F176-40B1-96B8-6C4750AC58E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E03C417-F176-40B1-96B8-6C4750AC58E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E03C417-F176-40B1-96B8-6C4750AC58E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{44B2D7B4-453B-4348-9D5F-5DC8529A4D3F} = {542DBC21-325E-4B3C-84FB-2CF99FD68AAD}
-		{C5F5587C-3DE2-4F96-A161-3537A986ABE9} = {22EB9972-6F9B-43DA-963D-64EC1EA44AB9}
+		{E9E4F7FB-11FD-4A57-B688-AA20370A89C2} = {4BF7057B-C623-4CA7-9137-A163EDBAFD3C}
+		{8E03C417-F176-40B1-96B8-6C4750AC58E6} = {B8E3FBB0-71CA-4A20-9295-1ECE7F85B955}
 	EndGlobalSection
 EndGlobal

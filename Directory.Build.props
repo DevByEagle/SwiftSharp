@@ -2,18 +2,16 @@
   <!-- Global defaults -->
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <CreateHardLinksForCopyAdditionalFilesIfPossible>true</CreateHardLinksForCopyAdditionalFilesIfPossible>
   </PropertyGroup>
 
   <!-- Project metadata -->
   <PropertyGroup>
     <Version>1.0</Version>
-
     <RepositoryUrl>https://github.com/DevByEagle/SwiftSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>

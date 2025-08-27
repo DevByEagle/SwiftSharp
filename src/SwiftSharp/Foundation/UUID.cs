@@ -30,7 +30,7 @@ namespace SwiftSharp.Foundation
 
         public static bool operator ==(UUID lhs, UUID rhs)
         {
-            if (ReferenceEquals(lhs, rhs))
+            if (Equals(lhs, rhs))
                 return true;
             else if (lhs.bytes.Length != rhs.bytes.Length)
                 return false;

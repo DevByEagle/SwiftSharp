@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.1</TargetFrameworks>
-    <RootNamespace>SwiftSharp</RootNamespace>
-    <Nullable>enable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net8.0;netstandard2.1</TargetFrameworks>
+        <RootNamespace>SwiftSharp</RootNamespace>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <!-- <InternalsVisibleTo Include="SwiftSharp.UI" /> -->
-  </ItemGroup>
+    <ItemGroup Label="InternalsVisibleTo">
+    </ItemGroup>
 </Project>
