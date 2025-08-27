@@ -40,10 +40,6 @@ public static class Program
 {
     public static void Main()
     {
-        // Making a Swift-style array
-        var array = new Array<int>(new int[] { 1, 2, 3 });
-        array.Append(4);
-        Console.WriteLine(array);
     }
 }
 ```

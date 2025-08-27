@@ -4,17 +4,26 @@ using SwiftSharp.Foundation;
 
 namespace BlockWorld
 {
+    public class Person : IEncodable
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public Dictionary<string, object> Encode()
+        {
+            return new Dictionary<string, object>
+            {
+                { "name", Name },
+                { "age", Age }
+            };
+        }
+    }
+
     internal class Program
     {
         public static void Main()
         {
-            var id = new UUID();
-            var id2 = new UUID();
-
-            if (id == id2)
-            {
-                Console.WriteLine(id);
-            }
+            
         }
     }
 }
