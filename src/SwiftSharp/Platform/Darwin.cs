@@ -2,8 +2,8 @@ using System;
 
 namespace SwiftSharp
 {
-#if WINDOWS
-    public static class WinSDK
+#if MACOS
+    public static class Darwin
     {
     }
 #endif

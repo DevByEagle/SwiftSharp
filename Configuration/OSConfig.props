@@ -1,0 +1,19 @@
+<Project>
+  <Choose>
+    <When Condition="'$(OS)' == 'Windows_NT'">
+      <PropertyGroup>
+        <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+      </PropertyGroup>
+    </When>
+    <When Condition="'$(OS)' != 'Windows_NT'">
+      <PropertyGroup>
+        <DefineConstants>$(DefineConstants);UNIX</DefineConstants>
+      </PropertyGroup>
+    </When>
+    <When Condition="'$(OS)' == 'Unix' And '$(RuntimeIdentifier)' == 'osx-x64'">
+      <PropertyGroup>
+        <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
+      </PropertyGroup>
+    </When>
+  </Choose>
+</Project>
