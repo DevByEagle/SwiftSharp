@@ -1,0 +1,66 @@
+{
+    "metadata": [
+        {
+            "src": [
+                {
+                    "files": [
+                        "**/*.csproj",
+                        "**/*.cs"
+                    ],
+                    "exclude": [
+                        "**/bin/**",
+                        "**/obj/**",
+                        "**/Tests/**"
+                    ]
+                }
+            ],
+            "dest": "api",
+            "disableGitFeatures": false
+        }
+    ],
+    "build": {
+        "content": [
+            {
+                "files": [
+                    "api/**.yml",
+                    "api/index.md"
+                ],
+                "src": "docs"
+            },
+            {
+                "files": [
+                    "articles/**.md",
+                    "articles/**/toc.yml",
+                    "toc.yml",
+                    "*.md"
+                ],
+                "src": "docs"
+            }
+        ],
+        "resource": [
+            {
+                "files": [
+                    "images/**",
+                    "styles/**"
+                ],
+                "src": "docs"
+            }
+        ],
+        "template": [
+            "default",
+            "./overrides"
+        ],
+        "dist": "../_site",
+        "globalMetadata": {
+            // "_appLogoPath": "images/logo.png",
+            // "_appFaviconPath": "images/favicon.ico",
+            "_disableContribution": true
+        },
+        "postProcessors": [],
+        "markdownEngineName": "markdig",
+        "noLangKeyword": false,
+        "keepFileLink": false,
+        "cleanupCacheHistory": false,
+        "disableGitFeatures": false
+    }
+}

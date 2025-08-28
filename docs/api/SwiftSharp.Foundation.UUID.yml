@@ -1,0 +1,32 @@
+# items:
+# - uid: SwiftSharp.Foundation.UUID
+#   commentId: T:SwiftSharp.Foundation.UUID
+#   parent: SwiftSharp.Foundation
+#   # children:
+#   # - SwiftSharp.Foundation.UUID.UUID
+#   langs:
+#   - csharp
+#   name: UUID
+#   fullName: SwiftSharp.Foundation.UUID
+#   type: class
+
+items:
+- uid: SwiftSharp.Foundation.UUID
+  name: UUID
+  fullname: SwiftSharp.Foundation.UUID
+  type: class
+  parent: SwiftSharp.Foundation
+  namespace: SwiftSharp.Foundation
+  assemblies:
+    - SwiftSharp
+  langs:
+    - csharp
+  inheritance:
+    - System.Object
+    - System.IEquatable
+  inheritedMembers:
+    - System.Object.Equals(System.Object)
+    - System.Object.GetHashCode
+    - System.Object.ToString
+  syntax:
+    content: 'public readonly struct UUID : IEquatable<UUID>'

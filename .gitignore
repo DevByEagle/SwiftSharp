@@ -7,6 +7,7 @@ Release/
 x64/
 x86/
 build/
+_site/
 UserDefaults.xml
 
 # Compiled object files, libraries, and executables
