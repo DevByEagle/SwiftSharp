@@ -5,7 +5,7 @@ namespace SwiftSharp
 {
 #if UNIX
     [StructLayout(LayoutKind.Sequential)]
-    public sealed partial class Glibc
+    public static class Glibc
     {
         #region Standard I/O Library
 
