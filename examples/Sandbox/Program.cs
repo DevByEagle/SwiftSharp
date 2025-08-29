@@ -1,13 +1,19 @@
 ﻿using System;
 using SwiftSharp;
-using SwiftSharp.Foundation;
 
 internal class Program
 {
     public static void Main()
     {
-        Glibc.Printf("Hello, World!\n");
-        ulong length = Glibc.Strlen($"Hello, {10}!");
-        Console.WriteLine($"Length of 'Hello, World!': {length}");
+        var dict = new SwiftSharp.Dictionary<string, int>(
+            ("Alice", 25),
+            ("Bob", 30),
+            ("Charlie", 20)
+        );
+
+        foreach (var key in dict.Keys)
+        {
+            Console.WriteLine($"{key} -> {dict[key]}");
+        }
     }
 }
