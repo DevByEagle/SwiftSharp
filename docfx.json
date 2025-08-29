@@ -48,12 +48,10 @@
         ],
         "template": [
             "default",
-            "./overrides"
+            "./thirdparty/catppuccin/"
         ],
         "dist": "../_site",
         "globalMetadata": {
-            // "_appLogoPath": "images/logo.png",
-            // "_appFaviconPath": "images/favicon.ico",
             "_disableContribution": true
         },
         "postProcessors": [],
