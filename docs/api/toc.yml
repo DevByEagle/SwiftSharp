@@ -1,8 +1,0 @@
-- name: API
-  href: index.md
-  items:
-  - uid: SwiftSharp.Foundation
-    name: SwiftSharp.Foundation
-    items:
-    - uid: SwiftSharp.Foundation.UUID
-      name: UUID
