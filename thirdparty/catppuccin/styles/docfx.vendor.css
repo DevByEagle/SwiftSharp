@@ -37,3 +37,23 @@ body {
     word-wrap: break-word;
     color: var(--subtext1) !important;
 }
+
+h1 {
+    
+}
+
+h2 {
+    line-height: 1.8;
+}
+
+h3 {
+    line-height: 1.8;
+}
+
+h5 {
+    padding: 10px 0px;
+}
+
+.navbar {
+  border: none;
+}
