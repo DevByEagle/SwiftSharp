@@ -63,7 +63,7 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
-code, pre {
+/**code, pre {
     display: block;
     width: 100%;
     max-width: 700px;
@@ -85,4 +85,4 @@ code, pre {
 
 pre {
     background-color: var(--mantle) !important;
-}
+}*/
