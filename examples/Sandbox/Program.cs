@@ -1,5 +1,6 @@
 ﻿using System;
 using SwiftSharp;
+using static SwiftSharp.Glibc;
 
 internal class Program
 {
@@ -13,7 +14,7 @@ internal class Program
 
         foreach (var key in dict.Keys)
         {
-            Console.WriteLine($"{key} -> {dict[key]}");
+            Printf($"{key} -> {dict[key]}");
         }
     }
 }

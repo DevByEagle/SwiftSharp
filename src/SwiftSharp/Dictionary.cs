@@ -61,7 +61,6 @@ namespace SwiftSharp
         #endregion
 
         #region Methods
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode()
         {
