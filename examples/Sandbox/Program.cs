@@ -15,6 +15,7 @@ internal class Program
         foreach (var key in dict.Keys)
         {
             Printf($"{key} -> {dict[key]}");
+            Printf("Hello {0}|n", __arglist("World"));
         }
     }
 }

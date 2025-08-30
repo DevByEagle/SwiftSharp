@@ -9,7 +9,6 @@ namespace SwiftSharp
     public static class Glibc
     {
         [DllImport("libc", EntryPoint = "printf")] public static extern int Printf(string format);
-        [DllImport("libc", EntryPoint = "printf")] public static extern int Printf(string format, __arglist);
     }
 #endif
 }
