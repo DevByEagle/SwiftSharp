@@ -10,6 +10,7 @@
   <!-- Project metadata -->
   <PropertyGroup>
     <Version>1.0</Version>
+    <Authors>DevByEagle</Authors>
     <RepositoryUrl>https://github.com/DevByEagle/SwiftSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
