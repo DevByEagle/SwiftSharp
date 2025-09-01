@@ -1,21 +1,19 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using SwiftSharp;
-using static SwiftSharp.Glibc;
 
-internal class Program
+namespace Sandbox
 {
-    public static void Main()
+    internal class Program
     {
-        var dict = new SwiftSharp.Dictionary<string, int>(
-            ("Alice", 25),
-            ("Bob", 30),
-            ("Charlie", 20)
-        );
-
-        foreach (var key in dict.Keys)
+        public static unsafe void Main()
         {
-            Printf($"{key} -> {dict[key]}");
-            Printf("Hello {0}|n", __arglist("World"));
+            var a = Result<int, InvalidOperationException>.Success(1);
+            var b = Result<int, InvalidOperationException>.Success(2);
+            var c = Result<int, InvalidOperationException>.Failure(new InvalidOperationException("Error"));
+
+
+            Console.WriteLine(a != b);
         }
     }
 }

@@ -1,4 +1,5 @@
 <Project>
+  <Import Project="./props/OSConfig.props" />
   <!-- Global defaults -->
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
@@ -6,26 +7,27 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <CreateHardLinksForCopyAdditionalFilesIfPossible>true</CreateHardLinksForCopyAdditionalFilesIfPossible>
   </PropertyGroup>
-
   <!-- Project metadata -->
   <PropertyGroup>
     <Version>1.0</Version>
     <RepositoryUrl>https://github.com/DevByEagle/SwiftSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
-  
   <!-- Config-specific settings -->
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <Optimize>false</Optimize>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>portable</DebugType>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
 </Project>

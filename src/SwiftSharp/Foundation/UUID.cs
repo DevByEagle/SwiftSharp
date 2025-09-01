@@ -6,10 +6,11 @@ namespace SwiftSharp.Foundation
 {
     public readonly struct UUID : IEquatable<UUID>
     {
+        #region Fields
         private readonly byte[] bytes;
+        #endregion
 
         #region Constructors
-
         public UUID()
         {
             bytes = new byte[16];
@@ -27,7 +28,6 @@ namespace SwiftSharp.Foundation
         #endregion
 
         #region Properties
-
         public static bool operator ==(UUID lhs, UUID rhs)
         {
             if (Equals(lhs, rhs))
@@ -43,11 +43,9 @@ namespace SwiftSharp.Foundation
         }
 
         public static bool operator !=(UUID lhs, UUID rhs) => !(lhs == rhs);
-
         #endregion
 
-        #region Utility Methods
-
+        #region Methods
         public override bool Equals(object? obj) => obj is UUID other && Equals(other);
 
         public bool Equals(UUID other)
@@ -78,7 +76,6 @@ namespace SwiftSharp.Foundation
                    BitConverter.ToString(bytes, 8, 2).Replace("-", "") + "-" +
                    BitConverter.ToString(bytes, 10, 6).Replace("-", "");
         }
-
         #endregion
     }
 }
