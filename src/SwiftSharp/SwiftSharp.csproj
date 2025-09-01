@@ -1,12 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net6.0;net8.0;netstandard2.1</TargetFrameworks>
+        <PackageId>SwiftSharp.Core</PackageId>
+        <AssemblyName>SwiftSharp</AssemblyName>
         <RootNamespace>SwiftSharp</RootNamespace>
+        <Description>
+        The core library of SwiftSharp, providing essential Swift-inspired APIs and foundational utilities for C# projects. </Description>
+        <TargetFrameworks>net6.0;net8.0;netstandard2.1</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
-
     <ItemGroup Label="InternalsVisibleTo">
     </ItemGroup>
 </Project>
