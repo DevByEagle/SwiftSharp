@@ -48,5 +48,5 @@ git checkout -b feature/my-awesome-feature
 
 ## Code of Conduct
 
-All contributors are expected to follow the [Contributor Covenant Code of Conduct]()
+All contributors are expected to follow the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)
 . Be respectful, constructive, and inclusive.
