@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using SwiftSharp;
+using SwiftSharp.Foundation;
 
 namespace Sandbox
 {
@@ -8,12 +9,11 @@ namespace Sandbox
     {
         public static unsafe void Main()
         {
-            var a = Result<int, InvalidOperationException>.Success(1);
-            var b = Result<int, InvalidOperationException>.Success(2);
-            var c = Result<int, InvalidOperationException>.Failure(new InvalidOperationException("Error"));
+            SwiftSharp.Dictionary<string, object> dictionary = new SwiftSharp.Dictionary<string, object>(
+                ("John", 32)
+            );
 
-
-            Console.WriteLine(a != b);
+            dictionary["John"] = 1;
         }
     }
 }

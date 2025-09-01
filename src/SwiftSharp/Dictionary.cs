@@ -48,6 +48,9 @@ namespace SwiftSharp
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => _native.TryGetValue(key, out var value) ? value : default;
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _native[key] = value;
         }
 
         public IEnumerable<Key> Keys
