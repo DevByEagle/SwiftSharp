@@ -1,34 +1,9 @@
 <Project>
-  <Import Project="./props/OSConfig.props" />
-  <!-- Global defaults -->
-  <PropertyGroup>
-    <LangVersion>latest</LangVersion>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <CreateHardLinksForCopyAdditionalFilesIfPossible>true</CreateHardLinksForCopyAdditionalFilesIfPossible>
-  </PropertyGroup>
-  <!-- Project metadata -->
-  <PropertyGroup>
-    <Version>1.0</Version>
-    <Authors>DevByEagle</Authors>
-    <RepositoryUrl>https://github.com/DevByEagle/SwiftSharp</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <IncludeSymbols>true</IncludeSymbols>
-    <IncludeSource>true</IncludeSource>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
-  <!-- Config-specific settings -->
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <Optimize>false</Optimize>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="../../LICENSE.md" Pack="true" PackagePath="" />
-  </ItemGroup>
+    <Import Project="./props/OSConfig.props" />
+    <Import Project="./props/NuGet.props" />
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <RunApiCompat>false</RunApiCompat>
+        <NoWarn>$(NoWarn);CS8500</NoWarn>
+    </PropertyGroup>
 </Project>

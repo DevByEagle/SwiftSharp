@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using SwiftSharp;
-using SwiftSharp.Foundation;
 
 namespace Sandbox
 {
     internal class Program
     {
-        public static unsafe void Main()
+        public static void Main()
         {
-            SwiftSharp.Dictionary<string, object> dictionary = new SwiftSharp.Dictionary<string, object>(
-                ("John", 32)
+            var dict = new SwiftSharp.Dictionary<string, object>(
+                ("Banana", 5)
             );
+            dict["Apple"] = 20;
 
-            dictionary["John"] = 1;
+            Console.WriteLine(dict["Banana"]);
+            Console.WriteLine(dict["Apple"]);
         }
     }
 }

@@ -1,0 +1,25 @@
+<Project>
+    <PropertyGroup>
+        <!-- Package Metadata -->
+        <!-- <PackageProjectUrl></PackageProjectUrl>
+        <PackageIcon></PackageIcon> -->
+
+        <!-- Repository info -->
+        <RepositoryUrl>https://github.com/DevByEagle/SwiftSharp</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+
+        <!-- Authors & licensing -->
+        <Authors>DevByEagle</Authors>
+        <!-- <Copyright></Copyright> -->
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+        <!-- <NoWarn></NoWarn> -->
+
+        <IncludeSymbols>true</IncludeSymbols>
+        <IncludeSource>true</IncludeSource>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)..\LICENSE.md" PackagePath="LICENSE.md" Pack="True" Visible="False" />
+    </ItemGroup>
+</Project>

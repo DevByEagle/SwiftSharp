@@ -1,14 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SwiftSharp.Core</PackageId>
+        <Version>1.1-beta</Version>
+        <Description>The core library of SwiftSharp, providing essential Swift-inspired APIs and foundational utilities for C# projects.</Description>
         <AssemblyName>SwiftSharp</AssemblyName>
         <RootNamespace>SwiftSharp</RootNamespace>
-        <Description>
-        The core library of SwiftSharp, providing essential Swift-inspired APIs and foundational utilities for C# projects. </Description>
         <TargetFrameworks>net6.0;net8.0;netstandard2.1</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+    <ItemGroup Label="Package">
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+    </ItemGroup>
     <ItemGroup Label="InternalsVisibleTo">
+        <InternalsVisibleTo Include="Sandbox" />
     </ItemGroup>
 </Project>

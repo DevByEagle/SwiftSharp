@@ -1,80 +1,108 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic; // TODO: Replace the current collection with a custom KeyValuePairs implementation for better performance or type safety.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace SwiftSharp
 {
     [StructLayout(LayoutKind.Sequential)]
-    public readonly struct Dictionary<Key, Value> where Key : notnull
+    public readonly struct Dictionary<Key, Value> : IEnumerable<KeyValuePair<Key, Value>> where Key : notnull
     {
-        #region Fields
-        private readonly System.Collections.Generic.Dictionary<Key, Value> _native;
-        #endregion
+        private readonly System.Collections.Generic.Dictionary<Key, Value> _storage;
 
-        #region Constructors
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal Dictionary(System.Collections.Generic.Dictionary<Key, Value> _native)
+        {
+            _storage = new System.Collections.Generic.Dictionary<Key, Value>(_native);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>
         /// Creates an empty dictionary.
         /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Dictionary()
-        {
-            _native = new System.Collections.Generic.Dictionary<Key, Value>();
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Dictionary(int minimumCapacity)
-        {
-            _native = new System.Collections.Generic.Dictionary<Key, Value>(minimumCapacity);
-        }
+        public Dictionary() : this(Array.Empty<(Key key, Value value)>()) { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Dictionary(params (Key key, Value value)[] elements)
         {
-            _native = new System.Collections.Generic.Dictionary<Key, Value>(elements.Length);
+            var native = new System.Collections.Generic.Dictionary<Key, Value>(elements.Length);
+
             foreach (var (key, value) in elements)
             {
-                _native[key] = value;
+                if (native.ContainsKey(key))
+                    throw new ArgumentException("Dictionary literal contains duplicate keys");
+
+                native[key] = value;
             }
+
+            _storage = native;
         }
-        #endregion
 
-        #region Properties
-        public int Count => _native.Count;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public IEnumerator<KeyValuePair<Key, Value>> GetEnumerator() => _storage.GetEnumerator();
 
-        public bool IsEmpty => Count == 0;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public int Count
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => _storage.Count;
+        }
+
+        public bool IsEmpty
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => Count == 0;
+        }
 
         public Value? this[Key key]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => _native.TryGetValue(key, out var value) ? value : default;
-
+            get => _storage.TryGetValue(key, out var val) ? val : default;
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _native[key] = value!;
-        }
-
-        public IEnumerable<Key> Keys
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            set
             {
-                return _native.Keys;
+                if (value is not null)
+                    _storage[key] = value;
+                else
+                    _storage.Remove(key);
             }
         }
-        #endregion
 
-        #region Methods
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Value? UpdateValue(Value value, Key key)
+        {
+            if (_storage.TryGetValue(key, out var oldValue))
+            {
+                _storage[key] = value;
+                return oldValue;
+            }
+            else
+            {
+                _storage[key] = value;
+                return default;
+            }
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode()
         {
-            var hash = new HashCode();
-            foreach (var kvp in _native)
+            int commutativeHash = 0;
+
+            foreach (var kvp in this)
             {
-                hash.Add(kvp.Key);
-                hash.Add(kvp.Value);
+                var elementHasher = new HashCode();
+                elementHasher.Add(kvp.Key);
+                elementHasher.Add(kvp.Value);
+
+                commutativeHash ^= elementHasher.ToHashCode();
             }
-            return hash.ToHashCode();
+
+            var finalHasher = new HashCode();
+            finalHasher.Add(commutativeHash);
+            return finalHasher.ToHashCode();
         }
-        #endregion
     }
 }
