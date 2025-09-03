@@ -50,7 +50,7 @@ jobs:
           else
             dotnet build --configuration Release
           fi
-          
+
   test:
     name: Test Examples
     runs-on: ${{ matrix.os }}
@@ -101,4 +101,4 @@ jobs:
           export PATH="$PATH:$HOME/.dotnet/tools"
 
       - name: Run Linter
-        run: dotnet format
+        run: dotnet format --no-restore
