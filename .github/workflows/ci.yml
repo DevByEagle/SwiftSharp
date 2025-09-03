@@ -37,7 +37,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
-      - name: Install Workloads
+      - name: Install Workloads 
         run: |
           # Android workload on all platforms
           dotnet workload install android --skip-manifest-update || echo "Android workload already installed"
@@ -46,7 +46,7 @@ jobs:
           if [[ "$RUNNER_OS" == "macOS" ]]; then
             dotnet workload install ios --skip-manifest-update || echo "iOS workload already installed"
             dotnet workload install macos --skip-manifest-update || echo "MacOS workload already installed"
-            dotnet workload install maccatalyst --skip-manifest-update || echo "Mac Catalyst workload already installed"
+            dotnet workload install maccatalyst --skip-manifest-update || echo "Mac Catalyst workload already installed"  
           fi
         shell: bash
 
