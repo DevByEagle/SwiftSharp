@@ -14,7 +14,11 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: [7.0, 8.0]
+        dotnet-version: ${{ fromJson(matrix.dotnet_versions) }}
+        dotnet_versions: 
+          windows-latest: '["6.0", "8.0"]'
+          macos-latest: '["6.0", "8.0"]'
+          ubuntu-latest: '["8.0"]'
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -29,7 +33,7 @@ jobs:
           # Install Android workload on all platforms
           dotnet workload install android --skip-manifest-update || echo "Android workload already installed"
 
-          # Install iOS workload only on macOS
+          # Install Apple workloads only on macOS
           if [[ "$RUNNER_OS" == "macOS" ]]; then
             dotnet workload install ios --skip-manifest-update || echo "iOS workload already installed"
             dotnet workload install macos --skip-manifest-update || echo "MacOS workload already installed"
@@ -37,19 +41,13 @@ jobs:
           fi
         shell: bash
 
-
       - name: Restore Dependencies
         run: |
           dotnet restore
           dotnet workload restore || echo "No workloads to restore"
 
       - name: Build Solution
-        run: |
-          if grep -q "<TargetFramework>net8.0</TargetFramework>" **/*.csproj; then
-            dotnet build --configuration Release --framework net8.0
-          else
-            dotnet build --configuration Release
-          fi
+        run: dotnet build --configuration Release
 
   test:
     name: Test Examples
@@ -57,7 +55,11 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: [7.0, 8.0]
+        dotnet-version: ${{ fromJson(matrix.dotnet_versions) }}
+        dotnet_versions: 
+          windows-latest: '["6.0", "8.0"]'
+          macos-latest: '["6.0", "8.0"]'
+          ubuntu-latest: '["8.0"]'
     needs: build
     steps:
       - name: Checkout Repository
