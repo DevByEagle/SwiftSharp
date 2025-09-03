@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{B8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "examples\Sandbox\Sandbox.csproj", "{8E03C417-F176-40B1-96B8-6C4750AC58E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftSharp.UI", "src\SwiftSharp.UI\SwiftSharp.UI.csproj", "{D52EA83C-6DC4-42AE-AA52-805C713AA19B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +30,14 @@ Global
 		{8E03C417-F176-40B1-96B8-6C4750AC58E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E03C417-F176-40B1-96B8-6C4750AC58E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E03C417-F176-40B1-96B8-6C4750AC58E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52EA83C-6DC4-42AE-AA52-805C713AA19B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52EA83C-6DC4-42AE-AA52-805C713AA19B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52EA83C-6DC4-42AE-AA52-805C713AA19B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52EA83C-6DC4-42AE-AA52-805C713AA19B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E9E4F7FB-11FD-4A57-B688-AA20370A89C2} = {4BF7057B-C623-4CA7-9137-A163EDBAFD3C}
 		{8E03C417-F176-40B1-96B8-6C4750AC58E6} = {B8E3FBB0-71CA-4A20-9295-1ECE7F85B955}
+		{D52EA83C-6DC4-42AE-AA52-805C713AA19B} = {4BF7057B-C623-4CA7-9137-A163EDBAFD3C}
 	EndGlobalSection
 EndGlobal

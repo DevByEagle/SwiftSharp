@@ -11,6 +11,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\..\src\SwiftSharp\SwiftSharp.csproj" />
+    <ProjectReference Include="..\..\src\SwiftSharp.UI\SwiftSharp.UI.csproj" />
     <!-- <PackageReference Include="SwiftSharp.Core" Version="1.0.0" /> -->
   </ItemGroup>
 

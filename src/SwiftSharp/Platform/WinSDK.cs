@@ -8,8 +8,8 @@ namespace SwiftSharp
     public static class WinSDK
     {
         #region Lib Names
-        public const string KERNEL32 = "kernel32.dll";
-        public const string USER32 = "user32.dll";
+        private const string KERNEL32 = "kernel32.dll";
+        private const string USER32 = "user32.dll";
         #endregion
 
         #region Constants
@@ -17,6 +17,8 @@ namespace SwiftSharp
         #endregion
 
         #region System Calls
+        [DllImport(KERNEL32, SetLastError = true)]
+        public static extern IntPtr GetStdHandle(int nStdHandle);
         #endregion
 
         #region Process
@@ -31,10 +33,7 @@ namespace SwiftSharp
         #region Network
         #endregion
 
-        #region Others
-        [DllImport(KERNEL32, SetLastError = true)]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static extern IntPtr GetStdHandle(int nStdHandle);
+        #region C Runtime
         #endregion
 
         #region Helpers

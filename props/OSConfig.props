@@ -1,19 +1,29 @@
 <Project>
-  <Choose>
-    <When Condition="'$(OS)' == 'Windows_NT'">
-      <PropertyGroup>
-        <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
-      </PropertyGroup>
-    </When>
-    <When Condition="'$(OS)' != 'Windows_NT'">
-      <PropertyGroup>
-        <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
-      </PropertyGroup>
-    </When>
-    <When Condition="'$(OS)' == 'Unix' And '$(RuntimeIdentifier)' == 'osx-x64'">
-      <PropertyGroup>
-        <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
-      </PropertyGroup>
-    </When>
-  </Choose>
+    <!--
+        The OS detection logic below is adapted from the SkiaSharp library.
+        SkiaSharp is an open-source project maintained by the Mono team.
+        Original repository: https://github.com/mono/SkiaSharp
+    -->
+    <PropertyGroup>
+        <IsWindows>$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))</IsWindows>
+        <IsMacOS>$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))</IsMacOS>
+        <IsLinux>$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))</IsLinux>
+    </PropertyGroup>
+    <Choose>
+        <When Condition="$(IsWindows)">
+            <PropertyGroup>
+                <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+            </PropertyGroup>
+        </When>
+        <When Condition="$(IsLinux)">
+            <PropertyGroup>
+                <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
+            </PropertyGroup>
+        </When>
+        <When Condition="$(IsMacOS)">
+            <PropertyGroup>
+                <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
+            </PropertyGroup>
+        </When>
+    </Choose>
 </Project>

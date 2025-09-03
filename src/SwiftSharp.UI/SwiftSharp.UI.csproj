@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>1.0</Version>
+    <Description></Description>
+    <TargetFrameworks>netstandard2.1;net6.0;net8.0;</TargetFrameworks>
+    <TargetFrameworks Condition="!$(IsLinux)">net8.0-android;net8.0-ios17.0;net8.0-macos</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  
+  <!-- Platform-specifics -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\SwiftSharp\SwiftSharp.csproj" />
+  </ItemGroup>
+</Project>

@@ -15,22 +15,12 @@ namespace SwiftSharp
         #endregion
 
         #region Process
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [DllImport(LIBSYSTEM, EntryPoint = "malloc")]
-        public static extern int GetPid();
         #endregion
 
         #region File APIs
         #endregion
 
         #region Memory
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [DllImport(LIBSYSTEM, EntryPoint = "malloc")]
-        public static extern IntPtr Malloc(UIntPtr size);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [DllImport(LIBSYSTEM, EntryPoint = "free")]
-        public static extern void Free(IntPtr ptr);
         #endregion
 
         #region Network

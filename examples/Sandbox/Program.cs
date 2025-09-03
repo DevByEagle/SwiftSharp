@@ -1,5 +1,4 @@
 ﻿using System;
-using SwiftSharp;
 #if LINUX
 using static SwiftSharp.Glibc;
 #elif MACOS
@@ -12,8 +11,7 @@ namespace Sandbox
     {
         public static void Main()
         {
-            var array = Malloc(10 * sizeof(int));
-            Printf($"{array}\n");
+            
         }
     }
 }
