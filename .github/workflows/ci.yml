@@ -24,7 +24,9 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: |
+          dotnet restore
+          dotnet workload restore
       
       - name: Build Solution
         run: dotnet build --configuration Release --no-restore
@@ -59,7 +61,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: [8.0, 7.0]
+        dotnet-version: [6.0, 8.0]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3

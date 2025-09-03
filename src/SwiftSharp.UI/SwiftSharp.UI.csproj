@@ -3,7 +3,8 @@
     <Version>1.0</Version>
     <Description></Description>
     <TargetFrameworks>netstandard2.1;net6.0;net8.0;</TargetFrameworks>
-    <TargetFrameworks Condition="!$(IsLinux)">net8.0-android;net8.0-ios17.0;net8.0-macos</TargetFrameworks>
+    <TargetFrameworks Condition="!$(IsLinux)">$(TargetFrameworks);net8.0-android;net8.0-ios17.0;net8.0-macos</TargetFrameworks>
+    <TargetFrameworks Condition="$(IsWindows)">$(TargetFrameworks);net8.0-windows</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Nullable>enable</Nullable>
   </PropertyGroup>
