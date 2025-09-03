@@ -1,9 +1,6 @@
 ﻿using System;
-#if LINUX
-using static SwiftSharp.Glibc;
-#elif MACOS
-using static SwiftSharp.Darwin;
-#endif
+using SwiftSharp;
+using SwiftSharp.UIKit;
 
 namespace Sandbox
 {
