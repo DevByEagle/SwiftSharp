@@ -26,8 +26,16 @@ jobs:
 
       - name: Install Workloads
         run: |
+          # Install Android workload on all platforms
           dotnet workload install android --skip-manifest-update || echo "Android workload already installed"
-          dotnet workload install ios --skip-manifest-update || echo "iOS workload already installed"
+
+          # Install iOS workload only on macOS
+          if [[ "$RUNNER_OS" == "macOS" ]]; then
+            dotnet workload install ios --skip-manifest-update || echo "iOS workload already installed"
+            dotnet workload install maccatalyst --skip-manifest-update || echo "Mac Catalyst workload already installed"
+          fi
+        shell: bash
+
 
       - name: Restore Dependencies
         run: |
