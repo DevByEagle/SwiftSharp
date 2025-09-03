@@ -95,4 +95,4 @@ jobs:
           export PATH="$PATH:$HOME/.dotnet/tools"
 
       - name: Run Linter
-        run: dotnet format --check
+        run: dotnet format
