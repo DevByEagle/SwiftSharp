@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: [6.0, 8.0]
+        dotnet-version: [7.0, 8.0]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -57,7 +57,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: [6.0, 8.0]
+        dotnet-version: [7.0, 8.0]
     needs: build
     steps:
       - name: Checkout Repository
@@ -79,11 +79,7 @@ jobs:
 
   lint:
     name: Lint
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: [6.0, 8.0]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -91,7 +87,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+          dotnet-version: 8.0.x
 
       - name: Install dotnet-format
         shell: bash
