@@ -13,11 +13,21 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: ["6.0", "8.0"]
         include:
+          # Windows builds
+          - os: windows-latest
+            dotnet-version: 6.0
+          - os: windows-latest
+            dotnet-version: 8.0
+          # macOS builds
+          - os: macos-latest
+            dotnet-version: 6.0
+          - os: macos-latest
+            dotnet-version: 8.0
+          # Linux builds
           - os: ubuntu-latest
-            dotnet-version: "6.0" # optional, if you want Ubuntu only to do 8.0, can remove 6.0
+            dotnet-version: 8.0
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -53,8 +63,20 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: ["6.0", "8.0"]
+        include:
+          # Windows tests
+          - os: windows-latest
+            dotnet-version: 6.0
+          - os: windows-latest
+            dotnet-version: 8.0
+          # macOS tests
+          - os: macos-latest
+            dotnet-version: 6.0
+          - os: macos-latest
+            dotnet-version: 8.0
+          # Linux tests
+          - os: ubuntu-latest
+            dotnet-version: 8.0
     needs: build
     steps:
       - name: Checkout Repository
