@@ -14,11 +14,10 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: ${{ fromJson(matrix.dotnet_versions) }}
-        dotnet_versions: 
-          windows-latest: '["6.0", "8.0"]'
-          macos-latest: '["6.0", "8.0"]'
-          ubuntu-latest: '["8.0"]'
+        dotnet-version: ["6.0", "8.0"]
+        include:
+          - os: ubuntu-latest
+            dotnet-version: "6.0" # optional, if you want Ubuntu only to do 8.0, can remove 6.0
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -30,10 +29,10 @@ jobs:
 
       - name: Install Workloads
         run: |
-          # Install Android workload on all platforms
+          # Android workload on all platforms
           dotnet workload install android --skip-manifest-update || echo "Android workload already installed"
 
-          # Install Apple workloads only on macOS
+          # Apple workloads only on macOS
           if [[ "$RUNNER_OS" == "macOS" ]]; then
             dotnet workload install ios --skip-manifest-update || echo "iOS workload already installed"
             dotnet workload install macos --skip-manifest-update || echo "MacOS workload already installed"
@@ -55,11 +54,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        dotnet-version: ${{ fromJson(matrix.dotnet_versions) }}
-        dotnet_versions: 
-          windows-latest: '["6.0", "8.0"]'
-          macos-latest: '["6.0", "8.0"]'
-          ubuntu-latest: '["8.0"]'
+        dotnet-version: ["6.0", "8.0"]
     needs: build
     steps:
       - name: Checkout Repository
