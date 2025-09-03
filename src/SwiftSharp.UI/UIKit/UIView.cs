@@ -4,6 +4,6 @@ namespace SwiftSharp.UIKit
 {
     public class UIView
     {
-        
+
     }
 }

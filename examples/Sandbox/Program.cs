@@ -8,7 +8,7 @@ namespace Sandbox
     {
         public static void Main()
         {
-            
+
         }
     }
 }
