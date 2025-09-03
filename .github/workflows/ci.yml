@@ -24,6 +24,10 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
+      - name: Install Android Workload
+        run: |
+          dotnet workload install android --skip-manifest-update || echo "Android workload already installed"
+
       - name: Restore Dependencies
         run: |
           dotnet restore
