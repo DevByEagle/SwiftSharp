@@ -7,7 +7,7 @@
     </When>
     <When Condition="'$(OS)' != 'Windows_NT'">
       <PropertyGroup>
-        <DefineConstants>$(DefineConstants);UNIX</DefineConstants>
+        <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
       </PropertyGroup>
     </When>
     <When Condition="'$(OS)' == 'Unix' And '$(RuntimeIdentifier)' == 'osx-x64'">

@@ -1,5 +1,10 @@
 ﻿using System;
 using SwiftSharp;
+#if LINUX
+using static SwiftSharp.Glibc;
+#elif MACOS
+using static SwiftSharp.Darwin;
+#endif
 
 namespace Sandbox
 {
@@ -7,13 +12,8 @@ namespace Sandbox
     {
         public static void Main()
         {
-            var dict = new SwiftSharp.Dictionary<string, object>(
-                ("Banana", 5)
-            );
-            dict["Apple"] = 20;
-
-            Console.WriteLine(dict["Banana"]);
-            Console.WriteLine(dict["Apple"]);
+            var array = Malloc(10 * sizeof(int));
+            Printf($"{array}\n");
         }
     }
 }

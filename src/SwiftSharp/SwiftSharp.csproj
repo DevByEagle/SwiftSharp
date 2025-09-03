@@ -9,9 +9,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-    <ItemGroup Label="Package">
-        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
-    </ItemGroup>
+
     <ItemGroup Label="InternalsVisibleTo">
         <InternalsVisibleTo Include="Sandbox" />
     </ItemGroup>
