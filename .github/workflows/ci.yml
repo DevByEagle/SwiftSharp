@@ -32,6 +32,7 @@ jobs:
           # Install iOS workload only on macOS
           if [[ "$RUNNER_OS" == "macOS" ]]; then
             dotnet workload install ios --skip-manifest-update || echo "iOS workload already installed"
+            dotnet workload install macos --skip-manifest-update || echo "MacOS workload already installed"
             dotnet workload install maccatalyst --skip-manifest-update || echo "Mac Catalyst workload already installed"
           fi
         shell: bash
@@ -43,8 +44,13 @@ jobs:
           dotnet workload restore || echo "No workloads to restore"
 
       - name: Build Solution
-        run: dotnet build --configuration Release --no-restore
-
+        run: |
+          if grep -q "<TargetFramework>net8.0</TargetFramework>" **/*.csproj; then
+            dotnet build --configuration Release --framework net8.0
+          else
+            dotnet build --configuration Release
+          fi
+          
   test:
     name: Test Examples
     runs-on: ${{ matrix.os }}
