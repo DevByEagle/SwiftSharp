@@ -94,6 +94,7 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
 
       - name: Install dotnet-format
+        shell: bash
         run: |
           if ! dotnet tool list -g | grep -q dotnet-format; then
             dotnet tool install -g dotnet-format
